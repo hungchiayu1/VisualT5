@@ -59,7 +59,7 @@ class VT5(nn.Module):
         mapped_embedding = self.prefix_projection(image_embeds).view(-1,self.prefix_length,self.t5_embedding_size)
         
         output_tokens = self.t5.generate(inputs_embeds=mapped_embedding)
-        caption = self.tokenizer.decode(output_tokens,skip_special_tokens=True)
+        caption = self.tokenizer.decode(output_tokens[0],skip_special_tokens=True)
         
         return caption
         

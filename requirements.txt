@@ -1,0 +1,4 @@
+altair<5
+transformers
+torch
+SentencePiece
